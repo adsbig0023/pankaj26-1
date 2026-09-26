@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HAJI SALMAN - Telegram</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #020d10;
+    color: #f5f7f8;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+.page {
+    max-width: 710px;
+    margin: auto;
+    padding: 35px 22px 25px;
+    background:
+      linear-gradient(rgba(0,255,100,.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,255,100,.025) 1px, transparent 1px),
+      #020d10;
+    background-size: 90px 90px;
+    min-height: 100vh;
+}
+
+:root {
+    --green: #15d66b;
+    --border: rgba(35,220,115,.25);
+    --muted: #899399;
+}
+
+/* PROFILE PHOTO */
+
+.profile {
+    width: 145px;
+    height: 145px;
+    border-radius: 50%;
+    border: 6px solid var(--green);
+    padding: 4px;
+    margin: 12px auto 32px;
+    box-shadow: 0 0 30px rgba(0,255,100,.2);
+}
+
+.profile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* TOP LABEL */
+
+.label {
+    display: inline-block;
+    border: 1px solid var(--border);
+    border-radius: 40px;
+    padding: 16px 25px;
+    color: #8acba7;
+    font-size: 12px;
+    letter-spacing: 4px;
+    margin-bottom: 40px;
+    background: rgba(0,255,100,.025);
+}
+
+.dot {
+    display: inline-block;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    background: var(--green);
+    margin-right: 14px;
+    vertical-align: middle;
+    box-shadow: 0 0 18px var(--green);
+}
+
+/* HEADING */
+
+h1 {
+    font-family: Georgia, serif;
+    font-size: clamp(42px, 9vw, 78px);
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 22px;
+    white-space: nowrap;
+}
+
+.subheading {
+    color: #65bd8a;
+    font-size: 14px;
+    letter-spacing: 9px;
+    margin-bottom: 48px;
+}
+
+.line {
+    width: 108px;
+    height: 5px;
+    background: var(--green);
+    border-radius: 5px;
+    margin: auto;
+    box-shadow: 0 0 15px rgba(0,255,100,.4);
+}
+
+/* GRAPH */
+
+.graph {
+    height: 145px;
+    margin: 45px 0 30px;
+    width: 100%;
+}
+
+.graph svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* DESCRIPTION */
+
+.description {
+    color: var(--muted);
+    font-size: 18px;
+    line-height: 1.9;
+    margin: 0 auto 42px;
+}
+
+/* MARKET BOXES */
+
+.market {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+.market-box {
+    border: 1px solid var(--border);
+    background: rgba(0,255,100,.025);
+    border-radius: 17px;
+    padding: 17px 18px;
+    font-size: 14px;
+    color: var(--muted);
+}
+
+.up {
+    color: #52e68a;
+    font-weight: bold;
+    margin-left: 6px;
+}
+
+.down {
+    color: #ff5964;
+    font-weight: bold;
+    margin-left: 6px;
+}
+
+/* CATEGORY TAGS */
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 34px;
+}
+
+.tag {
+    border: 1px solid var(--border);
+    background: rgba(0,255,100,.035);
+    color: #80bd99;
+    padding: 17px 15px;
+    border-radius: 15px;
+    font-size: 15px;
+}
+
+/* BUTTONS */
+
+.btn {
+    display: block;
+    width: 100%;
+    padding: 24px 12px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 19px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    transition: .2s;
+}
+
+.join {
+    background: linear-gradient(110deg, #17d66a, #0db653);
+    color: #001b0d;
+    box-shadow: 0 0 25px rgba(0,255,100,.1);
+}
+
+.updates {
+    background: rgba(0,255,100,.035);
+    border: 1px solid var(--border);
+    color: #72cf92;
+    font-size: 17px;
+    padding: 24px 10px;
+}
+
+.btn:active {
+    transform: scale(.98);
+}
+
+/* AGENCY FOOTER */
+
+.agency {
+    margin-top: 38px;
+    padding: 22px 12px 15px;
+    border-top: 1px solid rgba(0,255,100,.07);
+}
+
+.agency-title {
+    color: #899399;
+    font-size: 14px;
+    margin-bottom: 16px;
+}
+
+.agency-title strong {
+    color: #5cce88;
+}
+
+.agency a {
+    text-decoration: none;
+}
+
+.agency-btn {
+    display: inline-block;
+    border: 1px solid var(--border);
+    padding: 9px 17px;
+    border-radius: 30px;
+    color: #68cf91;
+    background: rgba(0,255,100,.035);
+    font-size: 12px;
+    letter-spacing: 1px;
+    margin-top: 4px;
+}
+
+.status {
+    font-size: 12px;
+    color: #68757a;
+    margin-top: 24px;
+    line-height: 2;
+}
+
+.status span {
+    color: var(--green);
+}
+
+@media (max-width: 400px) {
+    .page {
+        padding: 25px 15px;
+    }
+
+    h1 {
+        font-size: 39px;
+    }
+
+    .label {
+        font-size: 10px;
+        letter-spacing: 2px;
+        padding: 14px;
+    }
+
+    .description {
+        font-size: 15px;
+    }
+
+    .market-box {
+        padding: 13px;
+        font-size: 12px;
+    }
+
+    .tag {
+        font-size: 13px;
+        padding: 14px 11px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="page">
+
+    <!-- PROFILE PHOTO -->
+    <div class="profile">
+        <img src="profile.jpg" alt="Profile Photo">
+    </div>
+
+    <!-- TOP LABEL -->
+    <div class="label">
+        <span class="dot"></span>
+        TELEGRAM CHANNEL · FREE
+    </div>
+
+    <!-- MAIN HEADING -->
+    <h1>HAJI SALMAN</h1>
+
+    <div class="subheading">M E M O N</div>
+
+    <div class="line"></div>
+
+    <!-- GRAPH -->
+    <div class="graph">
+        <svg viewBox="0 0 650 150"
+             preserveAspectRatio="none">
+            <path d="M0 125 Q150 95 300 80 T650 35"
+                  fill="none"
+                  stroke="#40d77b"
+                  stroke-width="2.5"/>
+        </svg>
+    </div>
+
+    <!-- DESCRIPTION -->
+    <p class="description">
+        Expert stock &amp; options calls for the trading
+        community — NIFTY, BANKNIFTY &amp; intraday tips,
+        daily on Telegram.
+    </p>
+
+    <!-- MARKET BOXES -->
+    <div class="market">
+
+        <div class="market-box">
+            NIFTY <span class="up">23,842 ▲</span>
+        </div>
+
+        <div class="market-box">
+            BANKNIFTY <span class="up">51,204 ▲</span>
+        </div>
+
+        <div class="market-box">
+            SENSEX <span class="down">78,502 ▼</span>
+        </div>
+
+    </div>
+
+    <!-- TAGS -->
+    <div class="tags">
+        <div class="tag">📈 Intraday</div>
+        <div class="tag">🎯 Options</div>
+        <div class="tag">📊 Swing</div>
+        <div class="tag">⚡ Alerts</div>
+        <div class="tag">🇮🇳 Telugu</div>
+    </div>
+
+    <!-- JOIN TELEGRAM BUTTON -->
+    <a href="https://t.me/YOUR_CHANNEL"
+       class="btn join"
+       target="_blank">
+        ✈️ JOIN FREE ON TELEGRAM
+    </a>
+
+    <!-- MARKET UPDATES BUTTON -->
+    <a href="https://t.me/YOUR_UPDATES"
+       class="btn updates"
+       target="_blank">
+        📊 VIEW MARKET UPDATES →
+    </a>
+
+    <!-- ADSBIG AGENCY FOOTER -->
+    <div class="agency">
+
+        <p class="agency-title">
+            Managed by
+            <strong>ADSBIG AGENCY 🚀</strong>
+        </p>
+
+        <!-- AGENCY TELEGRAM LINK -->
+        <a href="https://t.me/YOUR_AGENCY"
+           class="agency-btn"
+           target="_blank">
+            ✈ TELEGRAM · ADSBIG AGENCY
+        </a>
+
+        <p class="status">
+            <span>🟢</span>
+            Market live · Members active · Trade responsibly
+        </p>
+
+    </div>
+
+</div>
+
+</body>
+</html>
